@@ -12,6 +12,7 @@ import { Marked, type Tokens } from "marked";
 export const REPO = "https://github.com/j33f/TasksPipes";
 export const DOC_REPO = "https://github.com/j33f/taskspipes-doc";
 export const SITE = "https://taskspipes.com";
+export const DOC_URL = "https://doc.taskspipes.com";
 
 /** Sections of the sidebar, in order, by folder name. */
 export const SECTIONS: Record<string, string> = {

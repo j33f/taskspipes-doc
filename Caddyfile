@@ -2,6 +2,9 @@
 :80 {
 	root * /srv
 	encode zstd gzip
+	# One address per page: "/guide/pipes/" goes to "/guide/pipes".
+	@trailing path_regexp trailing ^(.+)/$
+	redir @trailing {re.trailing.1} 308
 	try_files {path} {path}.html {path}/index.html
 	file_server
 	handle_errors 404 {

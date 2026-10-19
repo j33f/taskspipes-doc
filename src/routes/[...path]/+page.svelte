@@ -1,13 +1,22 @@
 <script lang="ts">
-  import { DOC_REPO, UI as ui } from "#lib/docs.ts";
+  import { DOC_REPO, DOC_URL, UI as ui } from "#lib/docs.ts";
 
   let { data } = $props();
   const p = $derived(data.page);
+  const title = $derived(p.path === "/" ? `TasksPipes ${ui.docs}` : `${p.title} · TasksPipes ${ui.docs}`);
+  const url = $derived(`${DOC_URL}${p.path}`);
 </script>
 
 <svelte:head>
-  <title>{p.path === "/" ? `TasksPipes ${ui.docs}` : `${p.title} · TasksPipes ${ui.docs}`}</title>
+  <title>{title}</title>
   {#if p.description}<meta name="description" content={p.description} />{/if}
+  <link rel="canonical" href={url} />
+  <meta property="og:title" content={title} />
+  {#if p.description}<meta property="og:description" content={p.description} />{/if}
+  <meta property="og:type" content={p.path === "/" ? "website" : "article"} />
+  <meta property="og:url" content={url} />
+  <meta property="og:site_name" content="TasksPipes {ui.docs}" />
+  <meta name="twitter:card" content="summary" />
 </svelte:head>
 
 <div class="page">
