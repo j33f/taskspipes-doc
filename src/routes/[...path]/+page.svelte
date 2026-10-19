@@ -16,7 +16,11 @@
   <meta property="og:type" content={p.path === "/" ? "website" : "article"} />
   <meta property="og:url" content={url} />
   <meta property="og:site_name" content="TasksPipes {ui.docs}" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://taskspipes.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="TasksPipes: task pipes for teams that live in Outline… or not. Your workspace, your server." />
+  <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="page">
