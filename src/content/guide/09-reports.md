@@ -1,6 +1,6 @@
 ---
 title: Time and reports
-description: Time per step, daily activity, weekly time — in the app and by e-mail.
+description: Time each task spends in each step, lead time, daily activity and weekly time reports in TasksPipes, shown in the app and sent by e-mail.
 ---
 
 ## Time per step

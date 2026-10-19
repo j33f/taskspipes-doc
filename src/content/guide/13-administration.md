@@ -1,6 +1,6 @@
 ---
 title: Administration
-description: Accounts and instance settings, for the administrators named by ADMIN_EMAILS.
+description: Administer a TasksPipes instance: manage accounts, change e-mail, Outline and sign-in settings without a restart, and review the history of changes.
 ---
 
 Administrators of the instance are named by the `ADMIN_EMAILS` variable, never in the app. Only an e-mail account,

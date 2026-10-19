@@ -1,6 +1,6 @@
 ---
 title: Models
-description: Design your own pipe and task types, and share them as YAML files.
+description: Design your own pipe types and task types in TasksPipes, with their columns, fields and starter tasks, and share them with others as YAML model files.
 ---
 
 When no built-in type fits, design your own in **Models** (sidebar).

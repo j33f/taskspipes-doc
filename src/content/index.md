@@ -1,6 +1,6 @@
 ---
 title: TasksPipes documentation
-description: Task pipes for teams that live in Outline — how to use them, connect them and host them.
+description: Learn TasksPipes, the open-source, self-hosted task manager for Outline teams (or not): kanban pipes, incoming buckets, integrations and hosting.
 ---
 
 TasksPipes is an open-source, self-hosted task manager built around [Outline](https://www.getoutline.com). It gives

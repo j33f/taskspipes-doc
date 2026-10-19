@@ -1,6 +1,6 @@
 ---
 title: Getting started
-description: Sign in, find your way around, create your first pipe and task.
+description: Sign in to TasksPipes with Outline, an e-mail link or company sign-in, find your way around, then create your first pipe and your first task.
 ---
 
 ## Signing in

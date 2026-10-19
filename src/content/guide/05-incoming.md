@@ -1,6 +1,6 @@
 ---
 title: Incoming buckets
-description: Send tasks to people and teams; accept them, or refuse them with a reason.
+description: Every person and team has an incoming bucket: send them a task, then accept it into a pipe or refuse it with a reason. Confidential tasks included.
 ---
 
 Every person and every team has an **incoming bucket**: the place where tasks sent by others arrive. Your own incoming

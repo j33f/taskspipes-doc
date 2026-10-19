@@ -1,6 +1,6 @@
 ---
 title: Running the instance
-description: E-mails and reports, rate limits, calendar feeds and backups.
+description: Run a TasksPipes instance day to day: e-mails, notifications and reports, rate limits, calendar feeds, GitHub and GitLab webhooks, and backups.
 ---
 
 ## E-mails, notifications and reports

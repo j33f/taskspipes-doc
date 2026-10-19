@@ -1,6 +1,6 @@
 ---
 title: Tasks
-description: Owners, sub-tasks, priority and labels, dependencies, recurrence, time, mentions and history.
+description: Everything about a task: owner, sub-tasks, priority and labels, mentions, dependencies, recurring tasks, estimates and logged time, type changes and history.
 ---
 
 ## The essentials

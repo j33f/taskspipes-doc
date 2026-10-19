@@ -1,6 +1,6 @@
 ---
 title: Public API
-description: A documented REST API, with personal access tokens.
+description: The TasksPipes public REST API: create personal access tokens, call the documented, versioned endpoints, and see what tokens are not allowed to do.
 ---
 
 ## Access tokens

@@ -1,6 +1,6 @@
 ---
 title: Sign-in methods
-description: Outline OAuth and API keys, e-mail accounts and company sign-in.
+description: Set up sign-in for TasksPipes: Outline OAuth (recommended) or Outline API keys, e-mail accounts with sign-in links, and company sign-in with OpenID Connect.
 ---
 
 Each method below can be set in `.env` or, by an administrator, in **Administration › Settings**.

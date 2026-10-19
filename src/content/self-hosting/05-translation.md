@@ -1,6 +1,6 @@
 ---
 title: Translation
-description: Add a language with a single file.
+description: TasksPipes speaks English, French and Spanish. Add another language with a single JSON file holding the app's texts, server messages and catalog.
 ---
 
 TasksPipes is available in English, French and Spanish. Each language is **one file**, `locales/<code>.json`, at the

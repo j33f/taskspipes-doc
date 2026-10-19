@@ -1,6 +1,6 @@
 ---
 title: Access rules and privacy
-description: Who can see and do what, and what stays private.
+description: Who can see and do what in TasksPipes, how confidential and team-only pipes keep their content in the app, and what stays private about you.
 ---
 
 ## Access rules

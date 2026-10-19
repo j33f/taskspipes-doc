@@ -1,6 +1,6 @@
 ---
 title: Import and export
-description: Pipes to CSV and JSON, imports from CSV and Trello, and your own data.
+description: Export a pipe to CSV or JSON, import tasks from a CSV file or a Trello board, and download all the data you hold in TasksPipes.
 ---
 
 **Export and import** is on a pipe's page.

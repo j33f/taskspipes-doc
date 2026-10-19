@@ -1,6 +1,6 @@
 ---
 title: Spaces and people
-description: Personal and team spaces, Outline colleagues, invitations and connections.
+description: Personal and team spaces in TasksPipes: Outline colleagues, accounts without Outline, e-mail invitations, connections and who can see whom.
 ---
 
 ## Spaces

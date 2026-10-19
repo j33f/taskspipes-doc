@@ -1,6 +1,6 @@
 ---
 title: Your settings
-description: The account menu: language, theme, profile, security, notifications and tokens.
+description: Your TasksPipes account menu: invite people, choose your language and theme, edit your profile, set up security and notifications, and create API tokens.
 ---
 
 Your name at the bottom of the sidebar opens the account menu:

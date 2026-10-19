@@ -1,6 +1,6 @@
 ---
 title: My tasks, Next action and Calendar
-description: Your work across every pipe, a GTD next action and a calendar of due dates.
+description: My tasks gathers your work across every pipe, Next action suggests what to do next the GTD way, and a calendar of due dates you can subscribe to.
 ---
 
 ## My tasks

@@ -1,6 +1,6 @@
 ---
 title: Search
-description: Find any task you can see, by its words or its number.
+description: Search every pipe and incoming bucket you can see with Ctrl + K or ⌘ + K: find a task by the words of its title, description, fields, comments or its key.
 ---
 
 **Search** at the top of the sidebar, or **Ctrl + K** (**⌘ + K** on a Mac) anywhere, finds tasks in every pipe and

@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Run TasksPipes with Docker in a few minutes.
+description: Install TasksPipes with Docker in a few minutes: requirements, a quick start with Docker Compose, PostgreSQL and Redis, reverse proxy setup and upgrades.
 ---
 
 TasksPipes is a single Node.js container serving both the API and the web app, with PostgreSQL and Redis. The

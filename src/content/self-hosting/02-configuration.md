@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: Every environment variable, and which settings can be managed in the app.
+description: Every TasksPipes environment variable, for Outline, e-mail, accounts and company sign-in, and which settings an administrator can manage in the app.
 ---
 
 TasksPipes is configured with environment variables, in `.env`.

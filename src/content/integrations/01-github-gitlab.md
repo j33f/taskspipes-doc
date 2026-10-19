@@ -1,6 +1,6 @@
 ---
 title: GitHub and GitLab
-description: Pull and merge requests that move tasks along, by their key.
+description: Connect a pipe to GitHub or GitLab: pull requests, merge requests and commits that name a task by its key are linked to it and move it along.
 ---
 
 A pipe can be connected to GitHub and GitLab repositories: pull requests, merge requests and commits that name a task

@@ -1,6 +1,6 @@
 ---
 title: Webhooks, Slack, Mattermost, Teams and Discord
-description: Send a pipe's events to your tools or to a chat channel.
+description: Send a pipe's task events as signed JSON webhooks to your tools, or as messages to a Slack, Mattermost, Microsoft Teams or Discord channel.
 ---
 
 On a pipe's page, **Webhooks** (members of its space) sends task events to an https address:

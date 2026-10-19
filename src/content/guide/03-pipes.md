@@ -1,6 +1,6 @@
 ---
 title: Pipes
-description: Kanban boards with a purpose — types, visibility, limits, swimlanes and archiving.
+description: Pipes are kanban boards with a purpose: built-in or custom pipe types, typed tasks and fields, visibility, work in progress limits, swimlanes and archiving.
 ---
 
 Pipes are kanban boards with drag and drop. Each column belongs to a generic state — *Backlog, Ready to start,

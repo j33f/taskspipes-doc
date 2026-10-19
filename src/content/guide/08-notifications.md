@@ -1,6 +1,6 @@
 ---
 title: Notifications
-description: Live in the app, by e-mail and on your devices — and how to choose.
+description: How TasksPipes notifies you, live in the app, by e-mail at once or in a daily digest, and as push notifications on your devices, and how to choose.
 ---
 
 ## Live in the app
