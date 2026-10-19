@@ -1,5 +1,5 @@
 ---
-title: Webhooks, Slack, Mattermost and Teams
+title: Webhooks, Slack, Mattermost, Teams and Discord
 description: Send a pipe's events to your tools or to a chat channel.
 ---
 
@@ -21,10 +21,11 @@ deliveries show in the dialog, with their answer; a *Test* button sends a `ping`
 
 ## Chat channels
 
-A webhook can post to a **Slack**, **Mattermost** or **Microsoft Teams** channel instead: choose its format and paste
-the channel's incoming webhook address (for Teams, a *Workflows* webhook). Each event becomes a short message with a
-link to the task — *Alice moved TP-12 “Quote” to Done* — comments quoted up to 300 characters, in the webhook's
-language.
+A webhook can post to a **Slack**, **Mattermost**, **Microsoft Teams** or **Discord** channel instead: choose its
+format and paste the channel's incoming webhook address (for Teams, a *Workflows* webhook; for Discord, the address
+from the channel's *Integrations › Webhooks*). Each event becomes a short message with a link to the task — *Alice
+moved TP-12 “Quote” to Done* — comments quoted up to 300 characters, in the webhook's language. Discord messages never
+ping anyone, even when a title or a comment says @everyone.
 
 ## Limits
 
