@@ -3,12 +3,10 @@
   import { page } from "$app/state";
   import Logo from "#lib/components/Logo.svelte";
   import Search from "#lib/components/Search.svelte";
-  import { REPO, SITE, UI, type Lang } from "#lib/docs.ts";
+  import { REPO, SITE, UI as ui } from "#lib/docs.ts";
 
   let { data, children } = $props();
-  const lang = $derived<Lang>(page.url.pathname === "/fr" || page.url.pathname.startsWith("/fr/") ? "fr" : "en");
-  const nav = $derived(data.nav[lang]);
-  const ui = $derived(UI[lang]);
+  const nav = $derived(data.nav);
   const current = $derived(page.url.pathname.replace(/\/$/, "") || "/");
   let open = $state(false);
   $effect(() => {
@@ -22,7 +20,7 @@
     <div class="side-top">
       <a class="brand" href={nav.home}><Logo size={24} /><span>TasksPipes</span><em>{ui.docs}</em></a>
     </div>
-    <Search {lang} placeholder={ui.search} empty={ui.noResult} />
+    <Search placeholder={ui.search} empty={ui.noResult} />
     <nav aria-label={ui.docs}>
       {#each nav.sections as section (section.id)}
         <div class="group">
@@ -34,7 +32,7 @@
       {/each}
     </nav>
     <div class="side-bottom">
-      <a href={lang === "fr" ? `${SITE}/fr` : SITE}>{ui.site} ↗</a>
+      <a href={SITE}>{ui.site} ↗</a>
       <a href={REPO}>{ui.github} ↗</a>
     </div>
   </aside>

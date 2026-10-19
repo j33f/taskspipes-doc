@@ -1,6 +1,6 @@
 # doc.taskspipes.com
 
-The documentation of [TasksPipes](https://github.com/j33f/TasksPipes), in English (`/`) and French (`/fr`).
+The documentation of [TasksPipes](https://github.com/j33f/TasksPipes).
 SvelteKit, prerendered to static files, served by Caddy.
 
 ```sh
@@ -13,7 +13,7 @@ docker build -t taskspipes-doc .   # Caddy serving the docs on port 80
 
 ## Writing pages
 
-Pages are Markdown files in `src/content/<lang>/<section>/<NN-slug>.md` (`index.md` is a language's home page):
+Pages are Markdown files in `src/content/<section>/<NN-slug>.md` (`index.md` is the home page):
 
 ```md
 ---
@@ -24,11 +24,10 @@ description: Kanban boards with a purpose.
 Text…
 ```
 
-- `NN` sets the order in the sidebar; the file name without it gives the URL (`/guide/pipes`, `/fr/guide/pipes`).
+- `NN` sets the order in the sidebar; the file name without it gives the URL (`/guide/pipes`).
 - Sections are declared in `SECTIONS`, interface texts in `UI` (`src/lib/docs.ts`).
-- Link between pages without the language (`[Pipes](/guide/pipes)`): French pages get `/fr` added.
-- A page should exist in both languages under the same file name; the language switch links them.
-- The search index is built at `/search-<lang>.json`.
+- Link between pages with their path (`[Pipes](/guide/pipes)`).
+- The search index is built at `/search.json`.
 
 ## Hosting
 

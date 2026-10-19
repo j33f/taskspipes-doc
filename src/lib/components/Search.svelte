@@ -1,8 +1,8 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
 
-  /** Searches the pages of a language: titles first, then headings, then text. The index loads on first use. */
-  let { lang, placeholder, empty }: { lang: string; placeholder: string; empty: string } = $props();
+  /** Searches the pages: titles first, then headings, then text. The index loads on first use. */
+  let { placeholder, empty }: { placeholder: string; empty: string } = $props();
 
   interface Entry {
     path: string;
@@ -18,7 +18,7 @@
     score: number;
   }
 
-  let index = $state<Record<string, Entry[]>>({});
+  let index = $state<Entry[] | null>(null);
   let q = $state("");
   let active = $state(0);
   let focused = $state(false);
@@ -26,16 +26,16 @@
   const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
   async function ensureIndex() {
-    if (index[lang]) return;
-    const res = await fetch(`/search-${lang}.json`);
-    index = { ...index, [lang]: await res.json() };
+    if (index) return;
+    const res = await fetch("/search.json");
+    index = await res.json();
   }
 
   const hits = $derived.by((): Hit[] => {
     const words = norm(q).split(/\s+/).filter((w) => w.length > 1);
-    if (!words.length || !index[lang]) return [];
+    if (!words.length || !index) return [];
     const out: Hit[] = [];
-    for (const e of index[lang]) {
+    for (const e of index) {
       const title = norm(e.title);
       const text = norm(e.text);
       if (!words.every((w) => title.includes(w) || text.includes(w) || e.headings.some((h) => norm(h.text).includes(w)))) continue;

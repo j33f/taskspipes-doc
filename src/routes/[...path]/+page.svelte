@@ -1,22 +1,19 @@
 <script lang="ts">
-  import { DOC_REPO, UI } from "#lib/docs.ts";
+  import { DOC_REPO, UI as ui } from "#lib/docs.ts";
 
   let { data } = $props();
   const p = $derived(data.page);
-  const ui = $derived(UI[p.lang]);
 </script>
 
 <svelte:head>
-  <title>{p.path === "/" || p.path === "/fr" ? `TasksPipes ${ui.docs}` : `${p.title} · TasksPipes ${ui.docs}`}</title>
+  <title>{p.path === "/" ? `TasksPipes ${ui.docs}` : `${p.title} · TasksPipes ${ui.docs}`}</title>
   {#if p.description}<meta name="description" content={p.description} />{/if}
-  <link rel="alternate" hreflang={p.lang === "fr" ? "en" : "fr"} href={`https://doc.taskspipes.com${data.other}`} />
 </svelte:head>
 
 <div class="page">
   <article class="prose">
     <div class="topline">
-      <span class="crumb">{p.section ? data.nav[p.lang].sections.find((s) => s.id === p.section)?.title : ui.docs}</span>
-      <a class="lang" href={data.other} hreflang={p.lang === "fr" ? "en" : "fr"}>{ui.lang}</a>
+      <span class="crumb">{p.section ? data.nav.sections.find((s) => s.id === p.section)?.title : ui.docs}</span>
     </div>
     <h1>{p.title}</h1>
     {#if p.description}<p class="lead">{p.description}</p>{/if}
@@ -41,7 +38,6 @@
   .page { display: grid; grid-template-columns: minmax(0, 760px) 220px; gap: 48px; justify-content: center; padding: 48px 40px 80px; }
   .topline { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 14px; }
   .crumb { color: var(--text-tertiary); font-weight: 500; }
-  .lang { color: var(--text-secondary); }
   .lead { font-size: 19px; color: var(--text-secondary); margin-top: 4px; }
   .pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--divider); }
   .pager a { display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; border: 1px solid var(--divider); border-radius: var(--radius); color: var(--text); font-weight: 500; text-decoration: none; min-width: 0; max-width: 48%; }

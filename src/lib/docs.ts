@@ -1,40 +1,29 @@
 /**
- * The documentation: Markdown pages in src/content/<lang>/<section>/<NN-slug>.md (and index.md for the home page),
+ * The documentation: Markdown pages in src/content/<section>/<NN-slug>.md (and index.md for the home page),
  * read at build time. Each page starts with a front matter giving its title (and optionally a description):
  *
  *   ---
  *   title: Pipes
  *   description: Kanban boards with a purpose.
  *   ---
- *
- * Links between pages are written without the language ("/guide/pipes"): French pages get "/fr" in front.
  */
 import { Marked, type Tokens } from "marked";
 
-export type Lang = "en" | "fr";
-export const LANGS: Lang[] = ["en", "fr"];
 export const REPO = "https://github.com/j33f/TasksPipes";
 export const DOC_REPO = "https://github.com/j33f/taskspipes-doc";
 export const SITE = "https://taskspipes.com";
 
 /** Sections of the sidebar, in order, by folder name. */
-export const SECTIONS: Record<string, Record<Lang, string>> = {
-  guide: { en: "Guide", fr: "Guide" },
-  integrations: { en: "Integrations", fr: "Intégrations" },
-  "self-hosting": { en: "Self-hosting", fr: "Hébergement" },
+export const SECTIONS: Record<string, string> = {
+  guide: "Guide",
+  integrations: "Integrations",
+  "self-hosting": "Self-hosting",
 };
 
-export const UI: Record<Lang, Record<string, string>> = {
-  en: {
-    docs: "Docs", search: "Search the docs…", noResult: "No page found", onThisPage: "On this page", previous: "Previous",
-    next: "Next", edit: "Edit this page on GitHub", site: "TasksPipes.com", github: "GitHub", lang: "Français", menu: "Menu",
-    notFound: "Page not found", notFoundText: "This page does not exist, or has moved.", home: "Back to the documentation",
-  },
-  fr: {
-    docs: "Doc", search: "Rechercher dans la doc…", noResult: "Aucune page trouvée", onThisPage: "Sur cette page", previous: "Précédent",
-    next: "Suivant", edit: "Modifier cette page sur GitHub", site: "TasksPipes.com", github: "GitHub", lang: "English", menu: "Menu",
-    notFound: "Page introuvable", notFoundText: "Cette page n'existe pas, ou a changé d'adresse.", home: "Retour à la documentation",
-  },
+export const UI = {
+  docs: "Docs", search: "Search the docs…", noResult: "No page found", onThisPage: "On this page", previous: "Previous",
+  next: "Next", edit: "Edit this page on GitHub", site: "TasksPipes.com", github: "GitHub", menu: "Menu",
+  notFound: "Page not found", notFoundText: "This page does not exist, or has moved.", home: "Back to the documentation",
 };
 
 export interface Heading {
@@ -44,10 +33,8 @@ export interface Heading {
 }
 
 export interface Page {
-  lang: Lang;
-  /** "/guide/pipes" (English) or "/fr/guide/pipes". */
+  /** "/guide/pipes". */
   path: string;
-  /** The same page in the other language, if any. */
   section: string | null;
   slug: string;
   title: string;
@@ -77,8 +64,8 @@ function frontMatter(raw: string): { meta: Record<string, string>; body: string 
   return { meta, body: raw.slice(m[0].length) };
 }
 
-/** Markdown to HTML: headings get ids, links between pages get the language, external links open as usual. */
-function render(body: string, lang: Lang): { html: string; headings: Heading[] } {
+/** Markdown to HTML: headings get ids, external links open as usual. */
+function render(body: string): { html: string; headings: Heading[] } {
   const headings: Heading[] = [];
   const taken = new Map<string, number>();
   const marked = new Marked({ gfm: true });
@@ -95,10 +82,8 @@ function render(body: string, lang: Lang): { html: string; headings: Heading[] }
       },
       link({ href, title, tokens }: Tokens.Link) {
         const inner = (this as unknown as { parser: { parseInline: (t: Tokens.Generic[]) => string } }).parser.parseInline(tokens);
-        const local = href.startsWith("/") && !href.startsWith("//");
-        const to = local && lang === "fr" && !href.startsWith("/fr") ? `/fr${href === "/" ? "" : href}` : href;
         const ext = /^https?:/.test(href) ? ' rel="noopener"' : "";
-        return `<a href="${to}"${title ? ` title="${title}"` : ""}${ext}>${inner}</a>`;
+        return `<a href="${href}"${title ? ` title="${title}"` : ""}${ext}>${inner}</a>`;
       },
     },
   });
@@ -109,16 +94,16 @@ function render(body: string, lang: Lang): { html: string; headings: Heading[] }
 function load(): Page[] {
   const pages: Page[] = [];
   for (const [file, raw] of Object.entries(files)) {
-    const m = file.match(/^\/src\/content\/(en|fr)\/(?:([a-z-]+)\/)?(?:(\d+)-)?([a-z0-9-]+)\.md$/);
+    const m = file.match(/^\/src\/content\/(?:([a-z-]+)\/)?(?:(\d+)-)?([a-z0-9-]+)\.md$/);
     if (!m) continue;
-    const [, lang, section = null, order = "0", name] = m as unknown as [string, Lang, string | null, string, string];
+    const [, section = null, order = "0", name] = m as unknown as [string, string | null, string, string];
     const { meta, body } = frontMatter(raw);
-    const { html, headings } = render(body, lang);
+    const { html, headings } = render(body);
     const slug = name === "index" && !section ? "" : name;
     const base = section ? `/${section}/${slug}` : "/";
     pages.push({
-      lang, section, slug, order: Number(order), file: file.replace(/^\//, ""),
-      path: lang === "fr" ? `/fr${base === "/" ? "" : base}` : base,
+      section, slug, order: Number(order), file: file.replace(/^\//, ""),
+      path: base,
       title: meta.title ?? name, description: meta.description ?? "",
       html, headings,
       text: body.replace(/```[\s\S]*?```/g, " ").replace(/[#*`>|_[\]()-]/g, " ").replace(/\s+/g, " ").trim(),
@@ -129,19 +114,11 @@ function load(): Page[] {
 
 export const PAGES = load();
 
-/** The pages of a language, in reading order: the home page, then each section's pages. */
-export function ordered(lang: Lang): Page[] {
-  const own = PAGES.filter((p) => p.lang === lang);
-  const home = own.filter((p) => !p.section);
-  const rest = Object.keys(SECTIONS).flatMap((s) => own.filter((p) => p.section === s).sort((a, b) => a.order - b.order));
+/** The pages in reading order: the home page, then each section's pages. */
+export function ordered(): Page[] {
+  const home = PAGES.filter((p) => !p.section);
+  const rest = Object.keys(SECTIONS).flatMap((s) => PAGES.filter((p) => p.section === s).sort((a, b) => a.order - b.order));
   return [...home, ...rest];
 }
 
 export const pageAt = (path: string) => PAGES.find((p) => p.path === path) ?? null;
-
-/** The same page in the other language (or that language's home page). */
-export function counterpart(page: Page): string {
-  const lang: Lang = page.lang === "fr" ? "en" : "fr";
-  const twin = PAGES.find((p) => p.lang === lang && p.section === page.section && p.slug === page.slug);
-  return twin?.path ?? (lang === "fr" ? "/fr" : "/");
-}
