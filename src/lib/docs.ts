@@ -23,7 +23,7 @@ export const SECTIONS: Record<string, string> = {
 
 export const UI = {
   docs: "Docs", search: "Search the docs…", noResult: "No page found", onThisPage: "On this page", previous: "Previous",
-  next: "Next", edit: "Edit this page on GitHub", site: "TasksPipes.com", github: "GitHub", menu: "Menu",
+  next: "Next", edit: "Edit this page on GitHub", site: "TasksPipes.com", github: "GitHub", legal: "Legal notice", privacy: "Privacy", menu: "Menu",
   notFound: "Page not found", notFoundText: "This page does not exist, or has moved.", home: "Back to the documentation",
 };
 

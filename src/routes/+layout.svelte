@@ -34,6 +34,7 @@
     <div class="side-bottom">
       <a href={SITE}>{ui.site} ↗</a>
       <a href={REPO}>{ui.github} ↗</a>
+      <span class="legal"><a href={`${SITE}/legal`}>{ui.legal}</a> · <a href={`${SITE}/privacy`}>{ui.privacy}</a></span>
     </div>
   </aside>
 
@@ -63,6 +64,7 @@
   nav a.active { background: var(--hover); color: var(--text); font-weight: 500; }
   .side-bottom { display: flex; flex-direction: column; gap: 4px; padding: 12px 10px 0; border-top: 1px solid var(--divider); font-size: 14px; }
   .side-bottom a { color: var(--text-secondary); }
+  .side-bottom .legal, .side-bottom .legal a { color: var(--text-tertiary); font-size: 12.5px; }
   .main { min-width: 0; }
   .mobile { display: none; }
   @media (max-width: 900px) {
