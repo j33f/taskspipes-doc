@@ -33,4 +33,5 @@ Everything is in PostgreSQL, files included. Back it up regularly:
 docker compose exec db pg_dump -U taskspipes -Fc taskspipes > taskspipes-$(date +%F).dump
 ```
 
-Keep `APP_SECRET` with the backups: secrets stored in the database are encrypted with it.
+Keep `APP_SECRET` with the backups: secrets stored in the database are encrypted with it. `taskspipes-update` also
+backs the database up before each update, in `backups/` (the last five kept).
