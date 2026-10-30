@@ -42,6 +42,13 @@ curl -fsSL https://raw.githubusercontent.com/j33f/TasksPipes/main/scripts/instal
 Other options: `--dir`, `--outline-url`, `--port`, `--version`, `--ref` (build a branch or tag from the sources);
 `--help` lists them.
 
+### Already running TasksPipes?
+
+The same command takes over an installation made by hand from a clone of the repository, whatever its version, to
+give it the published image and one-click updates. Run it from that directory (or give `--dir`): the database is backed
+up first, and its `.env`, data, port, Compose profiles and `compose.override.yml` are kept. A clone with changes to
+the repository's files is refused until they are committed, stashed or undone.
+
 ## Install by hand
 
 1. Get the configuration:
