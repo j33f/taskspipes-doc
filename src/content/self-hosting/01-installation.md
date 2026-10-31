@@ -28,8 +28,11 @@ The installer ([read it first](https://github.com/j33f/TasksPipes/blob/main/scri
 3. installs the latest release in `/opt/taskspipes` — its published image, or built from the sources when there is
    none for the machine — and writes `.env` with fresh secrets, readable by root only;
 4. sets up updates: **in one click from the app** with the published image, and in any case the
-   **`taskspipes-update`** command (an alias for bash and zsh);
-5. starts everything and waits until the app is healthy.
+   **`taskspipes-update`** command (an alias for bash and zsh), with `taskspipes-backup`, `taskspipes-restore` and
+   `taskspipes-transfer` (see [Backups, restore and moving](/self-hosting/backups));
+5. asks whether to back the instance up automatically — none (the suggestion), daily or weekly; then how many backups
+   to keep, encryption and a copy on S3-compatible storage;
+6. starts everything and waits until the app is healthy.
 
 Then open the address, sign in with the administrator's e-mail and finish in **Administration › Settings** (e-mail,
 Outline OAuth, sign-in…). Running the installer again keeps the configuration. Without questions:
@@ -39,8 +42,9 @@ curl -fsSL https://raw.githubusercontent.com/j33f/TasksPipes/main/scripts/instal
   --domain tasks.example.com --admin-email admin@example.com --proxy caddy --updates auto
 ```
 
-Other options: `--dir`, `--outline-url`, `--port`, `--version`, `--ref` (build a branch or tag from the sources);
-`--help` lists them.
+Other options: `--dir`, `--outline-url`, `--port`, `--version`, `--ref` (build a branch or tag from the sources),
+`--backups none|daily|weekly`, and `--restore` to start from a backup of another server (see
+[Move to another server](/self-hosting/backups#move-to-another-server)); `--help` lists them.
 
 ### Already running TasksPipes?
 
@@ -98,7 +102,8 @@ Settings › Updates, or `UPDATE_CHECK=false`). The database schema is upgraded 
 
 With the **updater** — set up by the installer, or by hand with `UPDATER_TOKEN` and `COMPOSE_PROFILES=updater` in
 `.env` — an administrator clicks **Update to …** in **About**. The app restarts with the new version, goes back to the
-previous one by itself if it does not start, and open pages reload once it runs. The updater is a separate small
+previous one by itself if it does not start, and open pages reload once it runs. The database is backed up first
+(`backups/taskspipes-before-update-….dump`). The updater is a separate small
 service: it alone holds the Docker socket, answers only the app (with a shared token, on the internal network) and
 takes nothing but a version number. See *One-click updates* in the
 [hosting guide](https://github.com/j33f/TasksPipes/blob/main/docs/HOSTING.md#one-click-updates).
@@ -112,11 +117,11 @@ taskspipes-update            # or: sudo /opt/taskspipes/scripts/update.sh
 taskspipes-update --check    # only tell whether a new release exists
 ```
 
-It backs the database up (`backups/`, the last five kept), moves to the latest release, waits until the app is
+It backs the instance up (`backups/`, the last five kept), moves to the latest release, waits until the app is
 healthy, and puts the previous version back if it is not.
 
 ### By hand
 
 With the published image, set `TASKSPIPES_VERSION` in `.env`, then `docker compose pull app && docker compose up -d`;
-built from the sources, `git pull && docker compose up -d --build`. Back up the database first
-(`docker compose exec db pg_dump -U taskspipes -Fc taskspipes > backup.dump`).
+built from the sources, `git pull && docker compose up -d --build`. Back up first: `sudo ./scripts/backup.sh` (see
+[Backups](/self-hosting/backups)).

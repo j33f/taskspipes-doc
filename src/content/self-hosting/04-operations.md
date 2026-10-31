@@ -27,11 +27,12 @@ be able to reach `APP_URL`.
 
 ## Backups
 
-Everything is in PostgreSQL, files included. Back it up regularly:
+Everything is in PostgreSQL, files included, and the secrets that open it are in `.env`. Back up both with one
+command, plan backups — encrypted, copied to S3-compatible storage — and restore them or move the instance to another
+server: see [Backups, restore and moving](/self-hosting/backups).
 
 ```shell
-docker compose exec db pg_dump -U taskspipes -Fc taskspipes > taskspipes-$(date +%F).dump
+taskspipes-backup             # back up now
+taskspipes-backup --setup     # plan backups, encryption, S3 copy
+taskspipes-restore --latest   # put the latest backup back
 ```
-
-Keep `APP_SECRET` with the backups: secrets stored in the database are encrypted with it. `taskspipes-update` also
-backs the database up before each update, in `backups/` (the last five kept).

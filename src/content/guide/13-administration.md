@@ -1,6 +1,6 @@
 ---
 title: Administration
-description: Administer a TasksPipes instance: manage accounts, change e-mail, Outline and sign-in settings without a restart, and review the history of changes.
+description: Administer a TasksPipes instance: manage accounts, change e-mail, Outline and sign-in settings without a restart, review the history of changes, and follow the backups.
 ---
 
 Administrators of the instance are named by the `ADMIN_EMAILS` variable, never in the app. Only an e-mail account,
@@ -31,3 +31,13 @@ is refused.
 ## History of changes
 
 Every change of a setting is listed: who, when, before and after — never a secret.
+
+## Backups
+
+The **Backups** tab shows how the instance is backed up on its server: the plan (when, how many kept, encrypted or not,
+the copy on S3-compatible storage), the last good backup, and the recent ones — planned, by hand, before an update
+or a restore — with their size and errors. The tab is marked when something is wrong, and the administrators are told
+by e-mail and push notification when a backup fails, when its copy fails, or when planned backups stop coming.
+
+Backups are made and planned on the server, not in the app: see
+[Backups, restore and moving](/self-hosting/backups).
