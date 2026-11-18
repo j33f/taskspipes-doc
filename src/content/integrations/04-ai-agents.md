@@ -51,9 +51,13 @@ With claude.ai and other connectors that sign in by themselves, there is no toke
 
 ## Tools
 
+When it connects, an agent is also told what TasksPipes is (spaces, pipes, incoming buckets, confidential pipes), and
+can read this documentation, as shipped with the instance's version, to learn how the rest works.
+
 | Tool | What it does | Needs |
 | --- | --- | --- |
 | `whoami` | Who the agent acts for, and what it may do | — |
+| `docs_contents`, `read_docs` | The documentation of the version your instance runs (how TasksPipes works), by section or by a few words | — |
 | `list_spaces`, `get_space` | Your spaces and their pipes | — |
 | `get_pipe` | A pipe, its stages and tasks | — |
 | `my_tasks` | Your tasks still to do | — |
