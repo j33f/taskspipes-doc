@@ -1,6 +1,6 @@
 ---
 title: Your settings
-description: Your TasksPipes account menu: invite people, choose your language and theme, edit your profile, set up security and notifications, and create API tokens.
+description: Your TasksPipes account menu: invite people, choose your language and theme, edit your profile, set up security and notifications, create API tokens and connect AI agents.
 ---
 
 Your name at the bottom of the sidebar opens the account menu:
@@ -14,11 +14,12 @@ Your name at the bottom of the sidebar opens the account menu:
 
 ## In Settings
 
-- **Language** — English, French or Spanish, following your browser unless chosen.
+- **Language** — English, French, Spanish or Portuguese (Portugal and Brazil), following your browser unless chosen.
 - **Theme** — automatic, light or dark.
 - **Profile** — the name and picture of accounts without Outline (Outline accounts use their Outline profile).
 - **Two-factor authentication** — for accounts without Outline, with Google Authenticator or any TOTP app.
 - **Notifications** — by e-mail, per kind, and on this device (see [Notifications](/guide/notifications)).
 - **Invitations** — the people you invited, and requests to connect.
 - **Access tokens** — for scripts and other tools (see the [API](/integrations/api)).
+- **AI agents (MCP)** — connect an AI assistant to your tasks, when the administrator allowed it (see [AI agents](/integrations/ai-agents)).
 - **Your data** — download it, or delete your account (see [Import and export](/guide/import-export)).

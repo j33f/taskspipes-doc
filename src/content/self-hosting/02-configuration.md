@@ -8,7 +8,7 @@ TasksPipes is configured with environment variables, in `.env`.
 The e-mail, Outline and sign-in settings can also be managed in the app by an administrator (*Administration ›
 Settings*). A variable set here (and not empty) wins and shows locked there; leave it out to manage the setting in the
 app. Those are `SMTP_*`, `MAIL_FROM`, `OUTLINE_*`, `ALLOW_API_KEY_LOGIN`, `ALLOW_EMAIL_SIGNUP`,
-`ALLOW_EMAIL_INVITATIONS`, `EMAIL_DOMAINS` and `OIDC_*`.
+`ALLOW_EMAIL_INVITATIONS`, `EMAIL_DOMAINS`, `OIDC_*` and `MCP_ENABLED`.
 
 ## Essentials
 
@@ -64,3 +64,7 @@ app. Those are `SMTP_*`, `MAIL_FROM`, `OUTLINE_*`, `ALLOW_API_KEY_LOGIN`, `ALLOW
 | `WEBHOOK_ALLOW_PRIVATE` | `true` lets webhooks reach http and internal addresses. |
 | `SESSION_DAYS` | Session length, 30 days by default. |
 | `LOG_LEVEL` | `info` by default. |
+| `MCP_ENABLED` | `true` lets people connect [AI agents](/integrations/ai-agents) over MCP (`/mcp`). Off by default. |
+| `HOST` | Address the server listens on: `0.0.0.0` by default; `127.0.0.1` when it runs without Docker behind a proxy on the same machine. |
+| `REALTIME_SHARED` | `false` turns off sharing live updates between [several instances](/self-hosting/operations#several-instances) through PostgreSQL. On by default, harmless with one instance. |
+| `LISTEN_DATABASE_URL` | Connection used to listen to the other instances, when `DATABASE_URL` goes through PgBouncer in transaction mode. |

@@ -22,7 +22,9 @@ The **Settings** tab manages the instance while it runs, without a restart:
   its API address, other servers allowed, internal addresses, a single workspace, sign-in with an API key;
 - **Outline OAuth** — client id and secret, with the redirect URL to copy;
 - **Accounts without Outline** — sign-up, invitations by e-mail, and the **e-mail domains** allowed;
-- **Company sign-in (OpenID Connect)** — on or off, issuer, client, secret, button label, scopes, domains.
+- **Company sign-in (OpenID Connect)** — on or off, issuer, client, secret, button label, scopes, domains;
+- **AI agents (MCP)** — whether people may connect AI assistants to their tasks (off by default; see
+  [AI agents](/integrations/ai-agents)).
 
 A setting given by the server's environment (`.env`) wins and shows **locked**. Secrets are encrypted and never shown
 again: they can only be replaced or removed. A change that would leave you, or every administrator, unable to sign in

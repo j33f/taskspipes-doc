@@ -1,13 +1,27 @@
 ---
 title: Notifications
-description: How TasksPipes notifies you, live in the app, by e-mail at once or in a daily digest, and as push notifications on your devices, and how to choose.
+description: How TasksPipes notifies you, with the bell and live in the app, by e-mail at once or in a daily digest, and as push notifications on your devices, and how to choose.
 ---
+
+## The bell
+
+The **bell** (at the top of the menu, and of the screen on mobile) shows how many notifications are unread. It opens
+them as a list, newest first:
+
+- what happened, by whom, on which task and where, with an excerpt of the comment;
+- what concerns you — a task received, given to you or refused, a comment on a task you wrote or own, a mention, a
+  task no longer blocked — and the news of your teams: a task created by someone else in one of their pipes;
+- a click goes to the task's pipe, scrolled to the task, which shines in yellow a moment; the notification is then read;
+- the ✓ icon marks one as read; on a touch screen, swipe it aside; **Mark all as read** empties the list.
+
+The bell works for everyone, with or without e-mail or push, and updates live. Read notifications are forgotten after
+30 days, unread ones after 90.
 
 ## Live in the app
 
-A task sent to you, refused, a mention or a task no longer blocked shows up at once, with a notification. The number
-of waiting tasks shows in the tab title. After the server is updated, open pages reload themselves when nothing is
-being edited.
+A task sent to you, refused, a mention or a task no longer blocked shows up at once, and the boards of your teams
+follow what the others do. The number of waiting tasks shows in the tab title. After the server is updated, open
+pages reload themselves when nothing is being edited.
 
 ## By e-mail
 
