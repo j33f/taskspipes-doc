@@ -13,7 +13,7 @@ your workspace kanban **pipes** with typed tasks, **incoming buckets** to hand w
   [Tasks](/guide/tasks).
 - **Handing work over?** See [Incoming buckets](/guide/incoming).
 - **Connecting other tools?** See [GitHub and GitLab](/integrations/github-gitlab), [Webhooks and chat](/integrations/webhooks)
-  and the [public API](/integrations/api).
+  the [public API](/integrations/api) and [AI agents](/integrations/ai-agents).
 - **Running your own instance?** Follow the [installation guide](/self-hosting/installation).
 
 ## The main ideas

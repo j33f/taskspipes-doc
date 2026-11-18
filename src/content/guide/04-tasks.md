@@ -12,7 +12,8 @@ description: Everything about a task: owner, sub-tasks, priority and labels, men
   drop; progress shows on cards.
 - **Outline document** — search documents or paste a URL to link one, or create an Outline document from the task.
 - **History** — every change is recorded with the state before and after (place, column, owner, due date, document,
-  fields, files, checked items) and its comment. Tasks are never deleted: they are moved to *Dropped*.
+  fields, files, checked items) and its comment. What was done through an access token or an AI agent shows *via* its
+  name. Tasks are never deleted: they are moved to *Dropped*.
 
 ## Priority and labels
 
