@@ -25,7 +25,8 @@ TasksPipes can run as several instances on one PostgreSQL database, behind a loa
 - instances starting together take turns to bring the database schema up to date.
 
 Give them all the same `APP_SECRET` and the same `REDIS_URL`. Health checks: `/livez` answers while the process runs,
-`/healthz` also reaches the database. One-click updates only apply to the Docker Compose setup.
+`/healthz` also reaches the database. One-click updates only apply to the Docker Compose setup. To run it on Kubernetes, see
+[Kubernetes](/self-hosting/kubernetes); without containers, [Without Docker](/self-hosting/without-docker).
 
 ## Calendar feeds
 
