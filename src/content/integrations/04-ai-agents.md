@@ -26,8 +26,12 @@ may do small, but cannot rule it out: give an agent no more than it needs, and k
 
 ## Connecting an agent
 
-The step-by-step guide for each assistant (Claude Code, Cursor, Claude Desktop) is in
-[Connect an AI assistant](/guide/ai-assistant).
+Two ways, both explained step by step in [Connect an AI assistant](/guide/ai-assistant):
+
+- **Connectors that sign in (OAuth)**, such as **claude.ai** (also used by Claude Desktop and mobile): give the
+  address `https://<your instance>/mcp` only. TasksPipes asks you to consent, showing which application asks and the
+  site it sends you back to, and you choose what it may do and where. Only reading is granted unless you tick more.
+- **A token** you create in Settings, for Claude Code, Cursor and other clients.
 
 
 1. In **Settings › AI agents (MCP)**, name the agent, choose what it may do and where, then **Connect an agent**.
@@ -43,7 +47,7 @@ claude mcp add --transport http taskspipes https://tasks.example.com/mcp --heade
 Other clients take the same two things: the address (Streamable HTTP) and the header `Authorization: Bearer tp_…`.
 Clients that only speak stdio can go through a bridge such as `mcp-remote`.
 
-Remote connectors that sign in with OAuth (such as those added in claude.ai) are not supported yet.
+With claude.ai and other connectors that sign in by themselves, there is no token to copy: see above.
 
 ## Tools
 
@@ -67,4 +71,14 @@ Remote connectors that sign in with OAuth (such as those added in claude.ai) are
 - It only takes agent tokens: personal access tokens are refused there, and agent tokens are refused on the
   [public API](/integrations/api).
 - Agents count in the API rate limit of their token (600 requests per minute).
-- Turning AI agents off makes `/mcp` answer 404 at once; agent tokens stop working until it is turned on again.
+- **OAuth.** TasksPipes is the authorization server of its own `/mcp` (OAuth 2.1):
+  - discovery: `/.well-known/oauth-protected-resource/mcp` and `/.well-known/oauth-authorization-server`;
+  - clients: by their metadata document (CIMD, as claude.ai does) or registered on the fly (`/oauth/register`);
+  - sign-in: the authorization code with PKCE (S256), after the person's consent;
+  - tokens: access tokens last an hour, for `/mcp` only; refresh tokens are rotated (90 days unused), and a refresh
+    token or a code used twice disconnects the connection.
+
+  Claude reaches the instance from `160.79.104.0/21`: a firewall in front of TasksPipes must let it reach `/mcp`,
+  `/.well-known/…` and `/oauth/…`.
+- Turning AI agents off makes `/mcp` and the OAuth endpoints answer 404 at once; agent tokens and connections stop
+  working until it is turned on again.
