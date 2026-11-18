@@ -17,7 +17,7 @@ It is **off until an administrator turns it on** (*Administration › Settings �
 - **Confidential content stays in the app.** Tasks of confidential and team-only pipes are never shown to an agent,
   even yours: what it reads goes to the company running the AI model. Lists say how many tasks were left out.
 - **What it does is visible.** The task's history shows it as done by you, *via* the agent's name.
-- **You can disconnect it at any time.** An agent token lasts 90 days at most, and stops working when your account is
+- **You can disconnect it at any time.** An agent token lasts 7, 30 or 90 days, or never expires if you choose so, and stops working when your account is
   disabled or when the administrator turns AI agents off.
 
 An agent reads text written by other people: titles, descriptions, comments. A malicious text could try to steer it
@@ -25,6 +25,10 @@ An agent reads text written by other people: titles, descriptions, comments. A m
 may do small, but cannot rule it out: give an agent no more than it needs, and keep an eye on its history.
 
 ## Connecting an agent
+
+The step-by-step guide for each assistant (Claude Code, Cursor, Claude Desktop) is in
+[Connect an AI assistant](/guide/ai-assistant).
+
 
 1. In **Settings › AI agents (MCP)**, name the agent, choose what it may do and where, then **Connect an agent**.
 2. Copy the token: it is shown once.

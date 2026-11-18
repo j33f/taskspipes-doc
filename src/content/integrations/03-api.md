@@ -8,7 +8,7 @@ description: The TasksPipes public REST API: create personal access tokens, call
 In **Settings › Access tokens**, create a token for a script or another tool:
 
 - it is shown **once**, at creation; only its hash is kept;
-- it has a name, an expiry (30 days, 90 days or a year) and a scope: **read only**, or **read and write**;
+- it has a name, an expiry (30 days, 90 days, a year, or never) and a scope: **read only**, or **read and write**;
 - it acts with exactly your rights, and can be revoked at any time.
 
 ## Calling the API
