@@ -21,5 +21,5 @@ Your name at the bottom of the sidebar opens the account menu:
 - **Notifications** — by e-mail, per kind, and on this device (see [Notifications](/guide/notifications)).
 - **Invitations** — the people you invited, and requests to connect.
 - **Access tokens** — for scripts and other tools (see the [API](/integrations/api)).
-- **AI agents (MCP)** — connect an AI assistant to your tasks, when the administrator allowed it (see [AI agents](/integrations/ai-agents)).
+- **AI agents (MCP)** — connect an AI assistant to your tasks, when the administrator allowed it (see [Connect an AI assistant](/guide/ai-assistant)).
 - **Your data** — download it, or delete your account (see [Import and export](/guide/import-export)).
