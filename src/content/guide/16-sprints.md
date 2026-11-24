@@ -44,7 +44,8 @@ settings is used. *Progress of the work* (in the planning) shows how it was lear
 - **The work's progress**: at the end of each sprint, the points of the pipe done and still to do, the tasks without
   points, and the **expected end** at the current velocity.
 - **A closed sprint's report** (*Report* on its banner): points committed, done, carried over and added on the way, its
-  burndown, what was done per person and per task type, and the velocity it leads to.
+  burndown, what was done per person and per task type, and the velocity it leads to. It can be published to Outline, by hand or
+  automatically as each sprint closes (see [Time and reports](/guide/reports#in-outline)).
 
 They are read from the tasks' history, so they are right whenever you open them.
 
