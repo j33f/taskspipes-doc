@@ -41,7 +41,9 @@ TasksPipes, tables — each one a child of a **parent document**.
 
   Reports are published as the key's Outline account, even when nobody is signed in, in the language of the member
   who set it up. The key is stored encrypted and never shown again; leave the field empty to keep it when changing
-  other settings. If Outline refuses the key (revoked or expired), publishing stops, the settings say why, and the
-  member who gave it is told by e-mail; a new key starts it again.
+  other settings. Other members can turn the reports on or off, but publishing under other documents takes their own
+  key. When Outline cannot be reached or fails on its side, the pipe is tried again every 10 minutes until midnight,
+  without publishing the same report twice. If Outline refuses the key (revoked or expired), publishing stops, the
+  settings say why, and the member who gave it is told by e-mail; a new key starts it again.
 
 The report hour (18:00 by default) and time zone are set by the instance.
