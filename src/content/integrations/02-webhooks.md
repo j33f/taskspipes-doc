@@ -4,7 +4,9 @@ description: Send a pipe's task events as signed JSON webhooks to your tools or 
 ---
 
 On a pipe's page, **Webhooks** (members of its space) sends task events to an https address:
-**task created**, **moved** (column or pipe), **given an owner**, **commented** and **done**.
+**task created**, **moved** (column or pipe), **given an owner**, **commented** and **done** — and, in pipes that work in
+[sprints](/guide/sprints), **sprint started** (its points committed) and **sprint closed** (points done, carried over,
+and the velocity it leads to).
 
 ## Signed JSON
 

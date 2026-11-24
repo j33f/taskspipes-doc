@@ -15,13 +15,16 @@ description: Everything about a task: owner, sub-tasks, priority and labels, men
   fields, files, checked items) and its comment. What was done through an access token or an AI agent shows *via* its
   name. Tasks are never deleted: they are moved to *Dropped*.
 
-## Priority and labels
+## Priority, points and labels
 
 - **Priority**: *urgent*, *high*, *medium*, *low* or none, shown as a colored flag on cards and lists.
+- **Points**: the complexity of a task, on the planning poker scale — 0, 1, 2, 3, 5, 8, 13, 21, 40, 100 — or none.
+  Cards show them in a small badge; once a task of a pipe has points, each column's header adds up those shown. In
+  pipes that work in [sprints](/guide/sprints), they also make the velocity and the burndowns.
 - **Labels** belong to a space (*a space's page › Labels*): a name and a color. Members of the space manage them; a
   task gets labels of its space only, and loses them when it is sent to another space.
 
-Pipes, *My tasks* and the search filter by label and priority.
+Pipes, *My tasks* and the search filter by label and priority; pipes by points too.
 
 ## Mentions
 
