@@ -12,11 +12,16 @@ It is **off until an administrator turns it on** (*Administration › Settings �
 
 - **It acts as you, never more.** Every tool goes through the same checks as the app, with your rights.
 - **It reads; the rest is up to you.** When you connect it, you choose what it may do besides reading: create and
-  change tasks, comment, log your time, send tasks to other people. Nothing it can do deletes anything.
+  change tasks (everything you could change: owner, labels, sub-tasks, dependencies…), comment, log your time, send
+  tasks to other people, and delete as you could (sub-tasks, time entries, files — never a task). Deleting is off
+  unless you tick it.
 - **Only where you allow it.** All your spaces, or only the ones you pick: the others do not exist for it.
 - **Confidential content stays in the app.** Tasks of confidential and team-only pipes are never shown to an agent,
   even yours: what it reads goes to the company running the AI model. Lists say how many tasks were left out.
-- **What it does is visible.** The task's history shows it as done by you, *via* the agent's name.
+- **What it does is visible.** The task's history and comments show it as done by you, with an **MCP** tag (the
+  agent's name on hover); a task it created shows the tag next to its author.
+- **Give it tasks of yours.** The owner list of your tasks offers **"<your name> (MCP)"**: your agent, offered to you
+  only. Tell it to "work only on the tasks assigned to you": it finds them with `agent_tasks`.
 - **You can disconnect it at any time.** An agent token lasts 7, 30 or 90 days, or never expires if you choose so, and stops working when your account is
   disabled or when the administrator turns AI agents off.
 
@@ -58,15 +63,20 @@ can read this documentation, as shipped with the instance's version, to learn ho
 | --- | --- | --- |
 | `whoami` | Who the agent acts for, and what it may do | — |
 | `docs_contents`, `read_docs` | The documentation of the version your instance runs (how TasksPipes works), by section or by a few words | — |
-| `list_spaces`, `get_space` | Your spaces and their pipes | — |
+| `list_spaces`, `get_space` | Your spaces, their pipes, members and labels | — |
 | `get_pipe` | A pipe: its columns (with their status), the task types it offers and their fields, its tasks | — |
 | `my_tasks` | Your tasks still to do | — |
+| `agent_tasks` | The tasks you handed to the agent ("<your name> (MCP)"), still to do | — |
 | `search_tasks` | Search the tasks you can see | — |
-| `get_task` | A task with its column, description, field values, sub-tasks and history | — |
-| `create_task`, `update_task`, `move_task` | Create a task in a pipe, change it (also its points, dates, sprint, estimate, task type and fields — files excepted), move it to another pipe | *Create and change tasks* |
+| `get_task` | A task with its column, owner, description, labels, field values, sub-tasks, dependencies, files and history | — |
+| `list_time_entries` | The time logged on a task | — |
+| `create_task`, `update_task`, `move_task` | Create a task in a pipe (with its sub-tasks), change anything of it (dates, priority, points, sprint, estimate, type, fields — files excepted, owner, its handing to the agent, labels), move it to another pipe | *Create and change tasks* |
+| `add_subtasks`, `update_subtask` | Add sub-tasks; check, uncheck, rename or reorder one | *Create and change tasks* |
+| `add_dependency`, `remove_dependency` | Make a task wait for another one, or stop it | *Create and change tasks* |
 | `add_comment` | Comment on a task | *Comment* |
-| `log_time` | Log your time on a task | *Log my time* |
+| `log_time`, `update_time_entry` | Log your time on a task, change one of your entries | *Log my time* |
 | `send_task` | Send a task to someone's incoming | *Send tasks to other people* |
+| `delete_subtask`, `delete_time_entry`, `delete_file` | Delete a sub-task, a time entry (yours, or any as an admin of the team) or a file | *Delete* |
 
 ## For administrators
 

@@ -36,14 +36,16 @@ Other assistants (Claude Code, Cursor…) use a **token** you copy: follow the s
 
 Open the account menu (your name at the bottom of the sidebar) › **Settings** › **AI agents (MCP)**.
 
-1. **Name it** after the assistant, e.g. *Claude* or *Cursor*. The name shows in the history of the tasks it changes,
-   to everyone who can open them.
+1. **Name it** after the assistant, e.g. *Claude* or *Cursor*. What it does shows in the history of the tasks with an
+   **MCP** tag next to your name; the agent's name shows on hover, to everyone who can open them.
 2. **Choose what it may do besides reading.** Leave everything unticked for an assistant that only answers questions.
-   - *Create and change tasks* — create tasks in your pipes, change their title, description, column, dates,
-     priority, points, sprint, estimate, task type and fields (files excepted), move them to another pipe of the same space.
+   - *Create and change tasks* — create tasks in your pipes and change everything you could: title, description,
+     column, dates, priority, points, sprint, estimate, task type and fields (files excepted), owner, labels,
+     sub-tasks (add, check, rename, reorder) and dependencies; move them to another pipe of the same space.
    - *Comment* — comment on tasks as you (comments can @mention people).
    - *Log my time* — log time on tasks as you.
    - *Send tasks to other people* — send a task to someone's incoming. Only tick it if you need it.
+   - *Delete* — delete sub-tasks, time entries and files, as you could (never a task). Off unless you tick it.
 3. **Choose where.** *All my spaces*, or *Only these:* and tick the spaces it may reach. The others do not exist for it.
 4. **Choose how long:** 7, 30 or 90 days, or *Never expires*. A shorter time is safer; you can connect it again later.
 5. Click **Connect an agent**.
@@ -124,13 +126,25 @@ Ask in plain words. The assistant picks the tools it needs:
 | "Move TP-42 to Done" | `update_task` or `move_task` (*Create and change tasks*) |
 | "Tell the team on TP-42 that it is ready" | `add_comment` (*Comment*) |
 | "Log 30 minutes on TP-42" | `log_time` (*Log my time*) |
+| "Split TP-42 into steps, and check the first one" | `add_subtasks`, `update_subtask` (*Create and change tasks*) |
+| "Work on the tasks assigned to you" | `agent_tasks` |
 
 Most assistants ask before using a tool that changes something: read what it is about to do.
+
+## Hand tasks to your agent
+
+Once you have connected an agent, the **Owner** list of your tasks offers **"<your name> (MCP)"**: your agent.
+Choose it on a task of yours (in a team space, or in your own space), or when you create one. The list offers it to
+you only: nobody else can hand tasks to your agent.
+
+The task stays yours: same rights, same lists, same notifications. It goes back to you when someone gives it to
+another person or it moves to another space. Then tell your assistant to "work only on the tasks assigned to you":
+it finds them with `agent_tasks`.
 
 ## What it never does
 
 - It never does **more than you** could do yourself.
-- It **deletes nothing**.
+- It **deletes nothing** unless you ticked *Delete*, and even then **never a task**.
 - It never sees tasks of **confidential** or **team-only** pipes, even yours: what it reads goes to the company running
   the AI model. When it says some tasks were left out, that is why.
 - Everything it does shows in the task's history as done by you, **via** its name.
