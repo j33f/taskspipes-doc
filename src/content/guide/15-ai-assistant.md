@@ -147,7 +147,8 @@ it finds them with `agent_tasks`.
 - It **deletes nothing** unless you ticked *Delete*, and even then **never a task**.
 - It never sees tasks of **confidential** or **team-only** pipes, even yours: what it reads goes to the company running
   the AI model. When it says some tasks were left out, that is why.
-- Everything it does shows in the task's history as done by you, **via** its name.
+- Everything it does shows in the task's history and comments as done by you, with an **MCP** tag (its name on
+  hover); a task it created shows the tag next to its author.
 
 ## Be careful with
 
