@@ -59,11 +59,11 @@ can read this documentation, as shipped with the instance's version, to learn ho
 | `whoami` | Who the agent acts for, and what it may do | — |
 | `docs_contents`, `read_docs` | The documentation of the version your instance runs (how TasksPipes works), by section or by a few words | — |
 | `list_spaces`, `get_space` | Your spaces and their pipes | — |
-| `get_pipe` | A pipe, its stages and tasks | — |
+| `get_pipe` | A pipe: its columns (with their status), the task types it offers and their fields, its tasks | — |
 | `my_tasks` | Your tasks still to do | — |
 | `search_tasks` | Search the tasks you can see | — |
-| `get_task` | A task with its description, sub-tasks and history | — |
-| `create_task`, `update_task`, `move_task` | Create a task in a pipe, change it, move it to another pipe | *Create and change tasks* |
+| `get_task` | A task with its column, description, field values, sub-tasks and history | — |
+| `create_task`, `update_task`, `move_task` | Create a task in a pipe, change it (also its points, dates, sprint, estimate, task type and fields — files excepted), move it to another pipe | *Create and change tasks* |
 | `add_comment` | Comment on a task | *Comment* |
 | `log_time` | Log your time on a task | *Log my time* |
 | `send_task` | Send a task to someone's incoming | *Send tasks to other people* |
