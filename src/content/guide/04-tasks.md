@@ -5,6 +5,9 @@ description: Everything about a task: owner, sub-tasks, priority and labels, men
 
 ## The essentials
 
+- **Right-click menu** — right-click a task's card on a board or its row in a list (or press the keyboard's menu key
+  on a card): open it, change its column, priority or owner (your own AI agent too), move it to another pipe of its
+  space, or delete it. Members of the task's space see all of it; others can open the task.
 - **Owner** — a task in a personal space belongs to its holder; to hand it to someone, send it to their
   [incoming](/guide/incoming). In a team space, the owner is chosen among the team's members.
 - **Due date**, **description** (Markdown, with a preview) and the **fields** of its task type.
@@ -12,8 +15,11 @@ description: Everything about a task: owner, sub-tasks, priority and labels, men
   drop; progress shows on cards.
 - **Outline document** — search documents or paste a URL to link one, or create an Outline document from the task.
 - **History** — every change is recorded with the state before and after (place, column, owner, due date, document,
-  fields, files, checked items) and its comment. What was done through an access token or an AI agent shows *via* its
-  name. Tasks are never deleted: they are moved to *Dropped*.
+  fields, files, checked items) and its comment. What was done by an AI agent shows an **MCP** tag next to the
+  person's name; what was done through an access token shows *via* its name.
+- **Deleting** — members of a task's space can delete it from its right-click menu, after a confirmation. It is for
+  good: its history, comments, sub-tasks, files, logged time and dependencies go with it. To keep a trace, move it to
+  *Dropped* instead. AI agents never delete a task.
 
 ## Priority, points and labels
 
