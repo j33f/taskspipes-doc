@@ -39,8 +39,8 @@ Open the account menu (your name at the bottom of the sidebar) › **Settings** 
 1. **Name it** after the assistant, e.g. *Claude* or *Cursor*. The name shows in the history of the tasks it changes,
    to everyone who can open them.
 2. **Choose what it may do besides reading.** Leave everything unticked for an assistant that only answers questions.
-   - *Create and change tasks* — create tasks in your pipes, change their title, description, column, due date,
-     priority, move them to another pipe of the same space.
+   - *Create and change tasks* — create tasks in your pipes, change their title, description, column, dates,
+     priority, points, sprint, estimate, task type and fields (files excepted), move them to another pipe of the same space.
    - *Comment* — comment on tasks as you (comments can @mention people).
    - *Log my time* — log time on tasks as you.
    - *Send tasks to other people* — send a task to someone's incoming. Only tick it if you need it.
