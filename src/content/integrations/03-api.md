@@ -19,8 +19,9 @@ The API lives under **`/api/v1`**. Send the token as a bearer token:
 curl -H "Authorization: Bearer tp_…" https://tasks.example.com/api/v1/me/tasks
 ```
 
-It covers your account, people, spaces, pipes and their tasks, your tasks, the calendar, the search, creating,
-changing, moving, sending and commenting tasks, dependencies, labels, logged time and sub-tasks.
+It covers your account, people, spaces, pipes and their tasks, your tasks, the calendar, the search, creating pipes,
+creating, changing, moving, sending and commenting tasks, dependencies, labels, logged time, sub-tasks, and models
+(pipe and task types: `GET /catalog`, then `POST`, `PUT` and `DELETE` on `/catalog/pipe-types` and `/catalog/task-types`).
 
 The **OpenAPI** description is at `/api/v1/openapi.json`, browsable at **`/api/v1/docs`** (Swagger UI) on your
 instance.
