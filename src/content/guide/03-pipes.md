@@ -1,6 +1,6 @@
 ---
 title: Pipes
-description: Pipes are kanban boards with a purpose: built-in or custom pipe types, typed tasks and fields, visibility, work in progress limits, swimlanes and archiving.
+description: Pipes are kanban boards with a purpose: built-in or custom pipe types, typed tasks and fields, visibility, work in progress limits, swimlanes, moving a pipe to a team and archiving.
 ---
 
 Pipes are kanban boards with drag and drop. Each column belongs to a generic state — *Backlog, Ready to start,
@@ -52,6 +52,17 @@ A board can show one row of columns per **owner** (team pipes) or per **task typ
 browser. Dropping a task in another lane gives it that lane's owner or type.
 
 Above the board, filter tasks by text, label, priority, owner and task type, or show only yours.
+
+## Moving a pipe to a team
+
+A pipe started on your own can become a team's: in the sidebar, **drag it onto the team** and confirm. It moves there
+with all its tasks, and the team's members can see and change them.
+
+- You can move your own personal pipes (not the *Personal* one), and the pipes of a team you are an admin of. A pipe
+  goes to teams only, never to a personal space.
+- Tasks keep their sub-tasks, files, logged time, sprints and history; each one notes the move.
+- Your personal tasks get you as their owner. Owners who are not members of the team are unassigned.
+- Labels become the team's labels of the same name (created when the team has none).
 
 ## Archiving
 
