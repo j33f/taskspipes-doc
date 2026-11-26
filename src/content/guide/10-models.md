@@ -16,6 +16,9 @@ Start from scratch or from an existing model. A model starts **private** — see
 be made **public**. Only its author can change it. A type in use cannot be deleted, and the kind of a saved field
 cannot change.
 
+Models can also be made over the [API](/integrations/api) (`/catalog`) and by an [AI agent](/integrations/ai-agents)
+allowed to *Create and change my models*.
+
 ## Model files
 
 Models can be exported and imported as **YAML files**, to share them between instances or keep them under version
