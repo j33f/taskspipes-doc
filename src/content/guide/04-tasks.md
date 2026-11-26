@@ -1,6 +1,6 @@
 ---
 title: Tasks
-description: Everything about a task: owner, sub-tasks, priority and labels, mentions, dependencies, recurring tasks, estimates and logged time, type changes and history.
+description: Everything about a task: owner, sub-tasks, editing together, priority and labels, mentions, dependencies, recurring tasks, estimates and logged time, type changes and history.
 ---
 
 ## The essentials
@@ -20,6 +20,20 @@ description: Everything about a task: owner, sub-tasks, priority and labels, men
 - **Deleting** — members of a task's space can delete it from its right-click menu, after a confirmation. It is for
   good: its history, comments, sub-tasks, files, logged time and dependencies go with it. To keep a trace, move it to
   *Dropped* instead. AI agents never delete a task.
+
+## Editing together
+
+Boards and open tasks follow what the others do as it happens, with no reloading — including what your own AI
+agent does in your name.
+
+- **One person edits a task at a time.** Opening a task you may change takes it: the others who open it see
+  **"Opened by <name>"** and read it (they can still comment) until you close it.
+- **Claim editing** asks the person editing it to hand it over. They see who asks, with **OK** (what they were typing
+  is saved first) and **Refuse**. Without an answer within **30 seconds**, the task goes to you.
+- A task is released when its window closes, or about a minute and a half after its page stopped answering (tab
+  closed, computer asleep).
+- AI agents and access tokens are not stopped by an open task: their change shows at once in the window, with a
+  notice saying who made it.
 
 ## Priority, points and labels
 

@@ -154,6 +154,8 @@ it finds them with `agent_tasks`.
   the AI model. When it says some tasks were left out, that is why.
 - Everything it does shows in the task's history and comments as done by you, with an **MCP** tag (its name on
   hover); a task it created shows the tag next to its author.
+- Its changes show at once on open boards and tasks, yours included. Someone editing a task in the app does not stop
+  it: the change appears in their window with a notice.
 
 ## Be careful with
 
