@@ -24,6 +24,7 @@ description: Who can see and do what in TasksPipes, how confidential and team-on
 | Manage a team | the team's admins |
 | Use the API with a token | the token's owner, with their own rights |
 | Act through an AI agent (MCP) | the token's owner, with their own rights, limited to the agent's scopes and spaces; never confidential or team-only pipes |
+| Move a pipe to a team, with its tasks | its holder for a personal pipe (not the default one), an admin of its team for a team pipe; only to a team they belong to |
 | Manage a pipe's webhooks | members of its space (not on confidential pipes) |
 | See every account, change the instance's settings | administrators (`ADMIN_EMAILS`) |
 | Export one's data; delete one's e-mail account | the person |
