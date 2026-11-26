@@ -63,6 +63,7 @@ with all its tasks, and the team's members can see and change them.
 - Tasks keep their sub-tasks, files, logged time, sprints and history; each one notes the move.
 - Your personal tasks get you as their owner. Owners who are not members of the team are unassigned.
 - Labels become the team's labels of the same name (created when the team has none).
+- It can also be done over the API (`POST /api/v1/pipes/{id}/move`) or by your AI assistant (`move_pipe`).
 
 ## Archiving
 

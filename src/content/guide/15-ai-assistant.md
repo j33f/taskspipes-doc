@@ -45,7 +45,8 @@ Open the account menu (your name at the bottom of the sidebar) › **Settings** 
    - *Comment* — comment on tasks as you (comments can @mention people).
    - *Log my time* — log time on tasks as you.
    - *Send tasks to other people* — send a task to someone's incoming. Only tick it if you need it.
-   - *Create pipes in my spaces* — create a pipe from a pipe type, with its starter tasks if you wish.
+   - *Create and move pipes in my spaces* — create a pipe from a pipe type, with its starter tasks if you wish, and move a
+     pipe with its tasks to one of your teams.
    - *Create and change my models* — make pipe types and task types of your own, and change those you made.
    - *Delete* — delete sub-tasks, time entries and files, as you could, and your models if it may make them (never a
      task). Off unless you tick it.
@@ -131,7 +132,8 @@ Ask in plain words. The assistant picks the tools it needs:
 | "Log 30 minutes on TP-42" | `log_time` (*Log my time*) |
 | "Split TP-42 into steps, and check the first one" | `add_subtasks`, `update_subtask` (*Create and change tasks*) |
 | "Work on the tasks assigned to you" | `agent_tasks` |
-| "Create a Hiring pipe in the team space" | `create_pipe` (*Create pipes in my spaces*) |
+| "Create a Hiring pipe in the team space" | `create_pipe` (*Create and move pipes in my spaces*) |
+| "Move my Side project pipe to the Product team" | `move_pipe` (*Create and move pipes in my spaces*) |
 | "Make a pipe type for my recruitment, with a Candidate task type" | `create_task_type`, `create_pipe_type` (*Create and change my models*) |
 
 Most assistants ask before using a tool that changes something: read what it is about to do.

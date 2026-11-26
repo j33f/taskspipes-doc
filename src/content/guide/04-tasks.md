@@ -24,7 +24,7 @@ description: Everything about a task: owner, sub-tasks, editing together, priori
 ## Editing together
 
 Boards and open tasks follow what the others do as it happens, with no reloading — including what your own AI
-agent does in your name.
+agent does in your name. A card someone else moves glides to its new column before your eyes.
 
 - **One person edits a task at a time.** Opening a task you may change takes it: the others who open it see
   **"Opened by <name>"** and read it (they can still comment) until you close it.
