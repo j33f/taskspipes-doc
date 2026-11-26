@@ -22,6 +22,9 @@ It is **off until an administrator turns it on** (*Administration › Settings �
   agent's name on hover); a task it created shows the tag next to its author.
 - **Give it tasks of yours.** The owner list of your tasks offers **"<your name> (MCP)"**: your agent, offered to you
   only. Tell it to "work only on the tasks assigned to you": it finds them with `agent_tasks`.
+- **You can change what it may do at any time** (*Settings › AI agents › Change*): permissions and spaces, without
+  connecting it again — its next request has them. Every tool is offered to every agent; one it lacks the permission
+  for does nothing and tells it which permission to ask you for.
 - **You can disconnect it at any time.** An agent token lasts 7, 30 or 90 days, or never expires if you choose so, and stops working when your account is
   disabled or when the administrator turns AI agents off.
 
@@ -61,7 +64,7 @@ can read this documentation, as shipped with the instance's version, to learn ho
 
 | Tool | What it does | Needs |
 | --- | --- | --- |
-| `whoami` | Who the agent acts for, and what it may do | — |
+| `whoami` | Who the agent acts for, what it may do, and the permissions you did not give it | — |
 | `docs_contents`, `read_docs` | The documentation of the version your instance runs (how TasksPipes works), by section or by a few words | — |
 | `list_spaces`, `get_space` | Your spaces, their pipes, members and labels | — |
 | `get_pipe` | A pipe: its columns (with their status), the task types it offers and their fields, its tasks | — |

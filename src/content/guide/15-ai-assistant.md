@@ -27,8 +27,8 @@ then also works in the Claude Desktop and mobile apps.
 3. Click **Allow**. You are back in claude.ai, connected. Ask, for instance, *"What are my TasksPipes tasks due this
    week?"*.
 
-The connection shows in **Settings › AI agents (MCP)**, marked *Connected with OAuth*. To change what it may do,
-disconnect it there and connect it again from claude.ai.
+The connection shows in **Settings › AI agents (MCP)**, marked *Connected with OAuth*. To change what it may do or
+where, click **Change** next to it: no need to connect it again (see [Change what it may do](#change-what-it-may-do)).
 
 Other assistants (Claude Code, Cursor…) use a **token** you copy: follow the steps below.
 
@@ -162,6 +162,18 @@ it finds them with `agent_tasks`.
   instructions, but cannot rule it out. Give it only the permissions you need, and check its history now and then.
 - **Sharing.** Do not paste the token in a shared configuration or a public repository.
 
+## Change what it may do
+
+**Settings › AI agents (MCP)** › **Change** next to the agent: tick or untick permissions and spaces, then **Save**.
+There is no need to connect it again: its next request has the new permissions, with a token or with OAuth.
+
+Every tool is offered to your assistant, whatever you allowed. When it tries one you did not allow, nothing happens
+and it is told which permission it lacks: it should tell you, for instance *"I need the permission Create pipes in my
+spaces"*. Tick it with **Change**, then ask again. `whoami` also tells it which permissions it does not have.
+
+> An assistant connected before version 0.34.1 keeps the list of tools it was given then: connect it again once to
+> get them all. After that, **Change** is enough.
+
 ## Disconnect it
 
 **Settings › AI agents (MCP)** › **Disconnect** next to the agent: it stops working at once. Remove it from your
@@ -176,8 +188,9 @@ disabled, or when the administrator turns AI agents off.
 | claude.ai says it *couldn't reach the MCP server* | AI agents are off, the address is wrong (it ends with `/mcp`), or a firewall keeps Claude out: tell the administrator. |
 | "This request has expired" in TasksPipes | More than 10 minutes went by: click *Connect* again in claude.ai. |
 | The assistant gets *401* or "invalid token" | The token was mistyped, expired or disconnected: connect the agent again and use the new token. |
-| It cannot create or comment | The agent was not given that permission: connect it again with it ticked. |
+| It cannot create or comment, or says a permission is missing | The agent was not given that permission: tick it with **Change**, then ask again. |
+| It says it made something you cannot find | It did not have the permission and should have said so: check the permissions with **Change**, and ask it to try again. |
 | "Task not found" or "Pipe not found" | The task is outside the spaces you chose for it, or in a confidential pipe. |
-| It cannot see a space | Connect the agent again with that space ticked, or with *All my spaces*. |
+| It cannot see a space | **Change**: tick that space, or *All my spaces*. |
 
 See [AI agents (MCP)](/integrations/ai-agents) for the details and the list of tools.
