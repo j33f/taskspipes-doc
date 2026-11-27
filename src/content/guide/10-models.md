@@ -11,6 +11,8 @@ When no built-in type fits, design your own in **Models** (sidebar).
   limit), the **task types** it offers, confidentiality (*confidential*, *team-only*), the weekly time report and
   **starter tasks** offered when a pipe is created.
 - **Task types**: name, icon, description and **fields**, with a live preview.
+- Both take **rules for the AI assistant**: what it follows when it [rewords or completes](/guide/tasks#ai-assistant)
+  a task of this type or of pipes of this type.
 
 Start from scratch or from an existing model. A model starts **private** — seen and used by its author only — and can
 be made **public**. Only its author can change it. A type in use cannot be deleted, and the kind of a saved field

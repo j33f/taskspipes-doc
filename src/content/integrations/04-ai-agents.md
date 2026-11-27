@@ -87,6 +87,50 @@ can read this documentation, as shipped with the instance's version, to learn ho
 | `delete_subtask`, `delete_time_entry`, `delete_file` | Delete a sub-task, a time entry (yours, or any as an admin of the team) or a file | *Delete* |
 | `delete_model` | Delete a model you made, once no pipe or task uses it | *Create and change my models* and *Delete* |
 
+## Events pushed to Claude Code (channel)
+
+Rather than asking what is new, a **Claude Code** session can be told at once, through a
+[channel](https://code.claude.com/docs/en/channels): what happens to the tasks you handed to your agent
+("<your name> (MCP)") arrives in the session as it happens —
+
+- a task is handed to the agent;
+- someone comments on a task handed to it (never its own comments).
+
+The token's limits apply: its spaces only, never a confidential or team-reserved task. The channel also gives Claude
+a `reply` tool (a comment on the task, as the agent: needs *Comment*) and `move` (to another column: needs *Change
+tasks*).
+
+A channel is a small program Claude Code starts on your machine (Node.js 18 or later). Your instance serves it:
+
+```shell
+curl -o ~/.claude/taskspipes-channel.mjs https://tasks.example.com/taskspipes-channel.mjs
+```
+
+Declare it in your project's `.mcp.json` (or `~/.claude.json`) with an agent token:
+
+```json
+{
+  "mcpServers": {
+    "taskspipes-channel": {
+      "command": "node",
+      "args": ["/home/me/.claude/taskspipes-channel.mjs"],
+      "env": { "TASKSPIPES_URL": "https://tasks.example.com", "TASKSPIPES_TOKEN": "tp_…" }
+    }
+  }
+}
+```
+
+Then start Claude Code with it as a channel. Channels other than Anthropic's need the development flag, which asks
+for a confirmation; in an organization, channels must be allowed by its owner:
+
+```shell
+claude --dangerously-load-development-channels server:taskspipes-channel
+```
+
+Keep the TasksPipes MCP server connected as well: Claude reads and changes the tasks with its tools. Behind the
+scenes, the channel reads `GET /mcp/events` (Server-Sent Events, the agent token as bearer; `Last-Event-ID` resumes
+after a cut).
+
 ## For administrators
 
 - The endpoint is `POST /mcp`. It keeps nothing between requests, so it works the same with
