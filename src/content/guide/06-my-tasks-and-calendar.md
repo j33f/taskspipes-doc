@@ -8,6 +8,10 @@ description: My tasks gathers your work across every pipe, Next action suggests 
 **My tasks** lists everything assigned to you and still to do, across all pipes — grouped by state, by pipe or by
 priority, and filtered by text, label and priority.
 
+It can also show **someone else's tasks**: pick the person at the top of the page, or click a member's avatar on a
+team's page. You see what they still have to do among the tasks you can see yourself — their personal pipes stay
+private.
+
 ## Next action
 
 **Next action** follows Getting Things Done:
