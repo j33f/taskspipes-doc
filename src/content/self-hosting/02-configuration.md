@@ -8,7 +8,7 @@ TasksPipes is configured with environment variables, in `.env`.
 The e-mail, Outline and sign-in settings can also be managed in the app by an administrator (*Administration ›
 Settings*). A variable set here (and not empty) wins and shows locked there; leave it out to manage the setting in the
 app. Those are `SMTP_*`, `MAIL_FROM`, `OUTLINE_*`, `ALLOW_API_KEY_LOGIN`, `ALLOW_EMAIL_SIGNUP`,
-`ALLOW_EMAIL_INVITATIONS`, `EMAIL_DOMAINS`, `OIDC_*` and `MCP_ENABLED`.
+`ALLOW_EMAIL_INVITATIONS`, `EMAIL_DOMAINS`, `OIDC_*`, `MCP_ENABLED` and `AI_*`.
 
 ## Essentials
 
@@ -65,6 +65,7 @@ app. Those are `SMTP_*`, `MAIL_FROM`, `OUTLINE_*`, `ALLOW_API_KEY_LOGIN`, `ALLOW
 | `SESSION_DAYS` | Session length, 30 days by default. |
 | `LOG_LEVEL` | `info` by default. |
 | `MCP_ENABLED` | `true` lets people connect [AI agents](/integrations/ai-agents) over MCP (`/mcp`). Off by default. |
+| `AI_PROVIDER`, `AI_URL`, `AI_API`, `AI_API_KEY`, `AI_MODEL`, `AI_EFFORT`, `AI_ALLOW_PRIVATE` | The built-in AI assistant: provider (`anthropic`, `openai`, `mistral`, `openrouter`, `ollama` or `other`), address up to the version (`https://…/v1`), API of an `other` server (`openai` or `anthropic`), key, model, effort (`low`, `medium`, `high`), and `true` to allow an internal address. Optional; also in *Administration › Settings › AI assistant*. |
 | `HOST` | Address the server listens on: `0.0.0.0` by default; `127.0.0.1` when it runs without Docker behind a proxy on the same machine. |
 | `REALTIME_SHARED` | `false` turns off sharing live updates between [several instances](/self-hosting/operations#several-instances) through PostgreSQL. On by default, harmless with one instance. |
 | `LISTEN_DATABASE_URL` | Connection used to listen to the other instances, when `DATABASE_URL` goes through PgBouncer in transaction mode. |
