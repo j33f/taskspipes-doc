@@ -15,3 +15,10 @@ incoming bucket you can see:
 
 A search only finds what you could open in the app. **Confidential** and **team-only** tasks show no excerpt: their
 content stays on their page.
+
+## Ask the assistant
+
+Once an administrator has [connected an AI](/guide/administration#settings), **Ask the assistant** answers the
+question you typed — *"what is left to do for ACME?"* — in a few sentences, with the tasks it relies on, ready to open.
+The AI turns your question into searches and reads only the tasks they find among those you can see (title, place,
+owner, excerpt); never confidential or team-only ones.
