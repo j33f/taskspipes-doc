@@ -1,6 +1,6 @@
 ---
 title: Tasks
-description: Everything about a task: owner, sub-tasks, editing together, priority and labels, mentions, dependencies, recurring tasks, estimates and logged time, type changes and history.
+description: Everything about a task: owner, sub-tasks, editing together, priority and labels, mentions, dependencies and related tasks, recurring tasks, estimates and logged time, type changes and history.
 ---
 
 ## The essentials
@@ -61,6 +61,9 @@ can open; loops are refused.
 - Once the last one is finished, the task's owner and author are told.
 - A linked task someone cannot open shows them only its title and owner; a confidential one shows as *Task not
   accessible*.
+
+Two tasks can also simply be **related**, neither waiting for the other (*Dependencies › Related to › Add a related
+task*): the link shows on both tasks, blocks nothing and tells no one. Anyone who may edit either task can remove it.
 
 ## Recurring tasks
 

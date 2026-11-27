@@ -3,8 +3,10 @@ title: Pipes
 description: Pipes are kanban boards with a purpose: built-in or custom pipe types, typed tasks and fields, visibility, work in progress limits, swimlanes, moving a pipe to a team and archiving.
 ---
 
-Pipes are kanban boards with drag and drop. Each column belongs to a generic state — *Backlog, Ready to start,
-Started, In progress, Blocked, Done, Dropped* — which the dashboard, due dates, reports and archiving rely on.
+Pipes are kanban boards with drag and drop: take a card anywhere, its title included, and drop it in another column.
+Each column belongs to a generic state — *Backlog, Ready to start, Started, In progress, Blocked, Done, Dropped* —
+which the dashboard, due dates, reports and archiving rely on. The **+** in a column's header adds a task to that
+column, without scrolling down to the end of a long one.
 
 ## Visibility
 
