@@ -11,6 +11,8 @@ description: Everything about a task: owner, sub-tasks, editing together, priori
 - **Owner** — a task in a personal space belongs to its holder; to hand it to someone, send it to their
   [incoming](/guide/incoming). In a team space, the owner is chosen among the team's members.
 - **Due date**, **description** (Markdown, with a preview) and the **fields** of its task type.
+- **Ctrl + Enter** (**⌘ + Enter** on a Mac) saves what you are editing — the description, a comment, a dialog —
+  wherever there is a *Save* button.
 - **Sub-tasks** — a checklist inside the task. Paste several lines to add several items, rename, reorder by drag and
   drop; progress shows on cards.
 - **Outline document** — search documents or paste a URL to link one, or create an Outline document from the task.

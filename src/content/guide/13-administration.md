@@ -24,7 +24,13 @@ The **Settings** tab manages the instance while it runs, without a restart:
 - **Accounts without Outline** — sign-up, invitations by e-mail, and the **e-mail domains** allowed;
 - **Company sign-in (OpenID Connect)** — on or off, issuer, client, secret, button label, scopes, domains;
 - **AI agents (MCP)** — whether people may connect AI assistants to their tasks (off by default; see
-  [AI agents](/integrations/ai-agents)).
+  [AI agents](/integrations/ai-agents));
+- **AI assistant** — the AI built into TasksPipes, one for the whole instance: a provider (Anthropic, OpenAI,
+  Mistral AI, OpenRouter, Ollama) or *Other* — any server speaking the OpenAI or the Anthropic API, with its address.
+  Then its API key (encrypted), the **model** (*Find the models* lists those the AI offers, even before saving) and the
+  **effort** (how much a model that thinks may think). *Test the connection* asks it a short question. An AI on an
+  internal address, such as Ollama on the same machine, must be allowed explicitly. Confidential pipes are never sent
+  to it. Its features for everyone — rewording tasks, its questions, assisted search — come in the next versions.
 
 A setting given by the server's environment (`.env`) wins and shows **locked**. Secrets are encrypted and never shown
 again: they can only be replaced or removed. A change that would leave you, or every administrator, unable to sign in
