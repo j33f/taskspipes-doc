@@ -23,6 +23,21 @@ description: Everything about a task: owner, sub-tasks, editing together, priori
   good: its history, comments, sub-tasks, files, logged time and dependencies go with it. To keep a trace, move it to
   *Dropped* instead. AI agents never delete a task.
 
+## AI assistant
+
+Once an administrator has [connected an AI](/guide/administration#settings), a task's page offers **Assistant** to
+whoever may edit it — not in confidential or team-reserved pipes. The assistant reads the title, description,
+fields, sub-tasks and last 40 comments, and proposes a clearer **title**, a complete **description** and values for
+the **fields** of the task's type (never people or files). It does not invent facts: what is missing goes in a note.
+
+The proposal shows next to what is there. Tick what to keep, then **Apply** — one change, in the history as usual —
+or **Ask again**. Nothing changes until then.
+
+It follows general rules, then those of the pipe's type and of the task's type ([models](/guide/models) can set
+them). Built in: development pipes get short, assertive titles that keep the decisions of the comments; user stories
+get *As a… / I want… / So that…* and acceptance criteria (*Given… When… Then…*); bugs get the observed and expected
+behaviour and numbered steps to reproduce. Each person can ask it 30 times an hour.
+
 ## Editing together
 
 Boards and open tasks follow what the others do as it happens, with no reloading — including what your own AI

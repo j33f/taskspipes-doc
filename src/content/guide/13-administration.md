@@ -30,7 +30,7 @@ The **Settings** tab manages the instance while it runs, without a restart:
   Then its API key (encrypted), the **model** (*Find the models* lists those the AI offers, even before saving) and the
   **effort** (how much a model that thinks may think). *Test the connection* asks it a short question. An AI on an
   internal address, such as Ollama on the same machine, must be allowed explicitly. Confidential pipes are never sent
-  to it. Its features for everyone — rewording tasks, its questions, assisted search — come in the next versions.
+  to it. On a task, it [rewords and completes](/guide/tasks#ai-assistant) it; its questions and assisted search come next.
 
 A setting given by the server's environment (`.env`) wins and shows **locked**. Secrets are encrypted and never shown
 again: they can only be replaced or removed. A change that would leave you, or every administrator, unable to sign in
