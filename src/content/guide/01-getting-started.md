@@ -32,7 +32,7 @@ types come with it — and decide whether it is private or **open** (others can 
 
 ## Your first task
 
-On a pipe's board, click **New task** (or **Add** at the bottom of a column). Give it a title, pick a task type if the
+On a pipe's board, click **New task** (or the **+** in a column's header, or **Add** at the bottom of a column). Give it a title, pick a task type if the
 pipe offers several, fill in its fields, and save. Then drag it from column to column as work moves on.
 
 To hand a task to someone, use **Send to…**: it lands in their [incoming](/guide/incoming).
